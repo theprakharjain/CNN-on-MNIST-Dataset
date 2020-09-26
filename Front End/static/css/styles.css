@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#canvas {
+  border: 5px solid #000000;
+  background-color: #000000;
+}
+
+#refresh {
+  text-decoration: none;
+  color: #000000;
+}
+
+#downloader {
+  text-decoration: none;
+  color: #000000;
+}
+
+#answer {
+  text-align: right;
+}

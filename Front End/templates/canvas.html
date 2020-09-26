@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <h3 id="answer"><b>{{prediction_text}}</b></h3>
+
+    <canvas
+      id="canvas"
+      onmousemove="showCoords(event)"
+      onmouseout="clearCoor()"
+    >
+    </canvas>
+
+    <p id="demo"></p>
+    <br />
+
+    <button type="reset">
+      <a href="/" id="refresh">Refresh</a>
+    </button>
+
+    <button type="submit" id="submitbtn">
+      <a href="#" id="downloader" onclick="downloaded()" download="image.jpeg"
+        >Save</a
+      >
+    </button>
+
+    <form action="/predict" method="POST">
+      <button type="submit">Calculate</button>
+    </form>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
