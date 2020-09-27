@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
   <body>
-    <h3 id="answer"><b>{{prediction_text}}</b></h3>
+    <h1 id="answer"><b>{{prediction_text}}</b></h1>
+    <!--{{prediction_text}}-->
 
     <canvas
       id="canvas"
@@ -16,21 +17,21 @@
     >
     </canvas>
 
-    <p id="demo"></p>
+    <p id="mousepos"></p>
     <br />
 
-    <button type="reset">
-      <a href="/" id="refresh">Refresh</a>
-    </button>
-
-    <button type="submit" id="submitbtn">
-      <a href="#" id="downloader" onclick="downloaded()" download="image.jpeg"
-        >Save</a
-      >
-    </button>
-
     <form action="/predict" method="POST">
-      <button type="submit">Calculate</button>
+      <button type="reset" id="resetbtn">
+        <a href="/" id="refresh">Refresh</a>
+      </button>
+
+      <button type="button" id="downloadbtn">
+        <a href="#" id="downloader" onclick="downloaded()" download="image.jpeg"
+          >Save</a
+        >
+      </button>
+
+      <button type="submit" id="calculatorbtn">Calculate</button>
     </form>
 
     <script src="/static/js/script.js"></script>

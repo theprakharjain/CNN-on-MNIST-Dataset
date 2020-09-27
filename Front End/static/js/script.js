@@ -45,21 +45,13 @@ window.addEventListener("load", () => {
 function showCoords(event) {
   var x = event.clientX;
   var y = event.clientY;
-  var coor = "X coords: " + x + ", Y coords: " + y;
-  document.getElementById("demo").innerHTML = coor;
+  var coor = "Mouse Position - X coords: " + x + ", Y coords: " + y;
+  document.getElementById("mousepos").innerHTML = coor;
 }
 
 function clearCoor() {
-  document.getElementById("demo").innerHTML = "Mouse Position";
+  document.getElementById("mousepos").innerHTML = "";
 }
-
-// // var image = canvas.toDataURL("image/jpeg", 1.0);
-
-// function saveimg() {
-//   // window.location.href = image;
-//   // document.write('<img src="' + image + '"/>');
-//   var image = canvas.toDataURL("image/jpeg", 1.0);
-// }
 
 function downloaded() {
   var download = document.getElementById("downloader");
