@@ -9,6 +9,10 @@
   background-color: #000000;
 }
 
+#link {
+  visibility: hidden;
+}
+
 #refresh {
   text-decoration: none;
   color: white;

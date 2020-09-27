@@ -61,3 +61,10 @@ function downloaded() {
     .replace("image/jpeg", "image/octet-stream");
   download.setAttribute("href", image);
 }
+
+function link_send(){
+  var link_transfer = document.getElementById("link");
+  var canvas = document.getElementById("canvas");
+  var dataURL = canvas.toDataURL();
+  link_transfer.setAttribute("value", dataURL);
+}

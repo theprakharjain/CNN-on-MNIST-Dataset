@@ -19,20 +19,28 @@
 
     <p id="mousepos"></p>
     <br />
-
-    <form action="/predict" method="POST">
-      <button type="reset" id="resetbtn">
-        <a href="/" id="refresh">Refresh</a>
-      </button>
-
-      <button type="button" id="downloadbtn">
-        <a href="#" id="downloader" onclick="downloaded()" download="image.jpeg"
-          >Save</a
-        >
-      </button>
-
-      <button type="submit" id="calculatorbtn">Calculate</button>
+    <!-- ---------------------------------------------------------------- -->
+    <form action="/imagesave" method="POST" id="image" name="image">
+      
+      <input type="text" id="link" name="link">
+      <!-- <input type="button" value ="Conversion" onclick="link_send()"> -->
+      <input type="submit" value="Predict" id="submit_link" onclick="link_send()">
+    
     </form>
+    <!-- ------------------------------------------------------------------- -->
+
+    <button type="reset" id="resetbtn">
+      <a href="/" id="refresh">Refresh</a>
+    </button>
+
+    <button type="submit" id="downloadbtn">
+      <a href="#" id="downloader" name="download" onclick="downloaded()" download="image.jpeg">Download Image</a>
+    </button>
+
+    <!-- <form action="/predict" method="POST">
+      
+      <button type="submit" id="calculatorbtn">Calculate</button>
+    </form> -->
 
     <script src="/static/js/script.js"></script>
   </body>
