@@ -3,8 +3,8 @@ window.addEventListener("load", () => {
   const canvas = document.querySelector("#canvas");
   const ctx = canvas.getContext("2d");
 
-  canvas.height = 600; //window.innerHeight;
-  canvas.width = 600; //window.innerWidth;
+  canvas.height = 500; //window.innerHeight;
+  canvas.width = 500; //window.innerWidth;
 
   // Variable
 
@@ -35,6 +35,10 @@ window.addEventListener("load", () => {
 
     ctx.beginPath();
     ctx.moveTo(x, y);
+
+    document.getElementById("loader").style.visibility = "visible";
+    document.getElementById("loader_text").style.visibility = "visible";
+    document.getElementById("mousepos").style.visibility = "visible";
   }
 
   canvas.addEventListener("mousedown", startPos);
@@ -45,7 +49,7 @@ window.addEventListener("load", () => {
 function showCoords(event) {
   var x = event.clientX;
   var y = event.clientY;
-  var coor = "Mouse Position - X coords: " + x + ", Y coords: " + y;
+  var coor = "Calculating Mouse Position - X coords: " + x + ", Y coords: " + y;
   document.getElementById("mousepos").innerHTML = coor;
 }
 
@@ -62,9 +66,15 @@ function downloaded() {
   download.setAttribute("href", image);
 }
 
-function link_send(){
+function link_send() {
   var link_transfer = document.getElementById("link");
   var canvas = document.getElementById("canvas");
   var dataURL = canvas.toDataURL();
   link_transfer.setAttribute("value", dataURL);
+}
+
+if (document.getElementById("answer").innerText != "") {
+  document.getElementById("loader").style.top = "25%";
+} else {
+  document.getElementById("loader").style.top = "37%";
 }

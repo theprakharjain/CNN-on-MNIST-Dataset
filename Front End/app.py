@@ -20,7 +20,7 @@ def home():
     return render_template("canvas.html")
 
 
-@app.route("/imagesave",  methods = ["GET", "POST"])
+@app.route("/predict",  methods = ["GET", "POST"])
 # @cross_origin()
 def image_view():
     if request.method == "POST":
@@ -46,7 +46,7 @@ def image_view():
         # converting the image into RGB Form RGBA through "Pillow (PIL)" library
         rgb_im = image.convert('RGB')
 
-        ############################## Important Commands which can come in handy later (DO NOT DELETE)################
+        ############################## Important Commands which can come in handy later (DO NOT DELETE) ################
 
         # # To Save RGB covnverted Image
         # rgb_im.save(r'C:\Users\iprak\Desktop\grayscale_converted.jpeg')
@@ -80,64 +80,6 @@ def image_view():
 
         # Rendering the prediction on to the webpage
         return render_template("canvas.html", prediction_text = "The digit is {}".format(output[0]))
-
-
-#######################################  Waste/Old Code ##############################################
-# with app.app_context():
-
-# @app.route("/predict", methods = ["GET", "POST"])
-# # @cross_origin()
-# def predict():
-#     if request.method == "POST":
-
-#         # img = img.imresize(img,(28,28))
-#         img = Image.open(r"C:\Users\iprak\Downloads\image.jpeg")
-#         # convert the image to grayscale
-#         img = img.convert(mode='L')
-
-#         # Saving new image
-#         img.save(r'C:\Users\iprak\Desktop\grayscale_converted.jpg')
-
-#         # Loading Grayscale Image
-#         img_conv = Image.open(r"C:\Users\iprak\Desktop\grayscale_converted.jpg")
-
-#         # report the size of the image
-#         print(img_conv.size)
-
-#         # resize image and ignore original aspect ratio
-#         img_resized = img_conv.resize((28,28))
-
-#         # report the size of the thumbnail
-#         print(img_resized.size)
-
-#         # Saving new image
-#         img_resized.save(r'C:\Users\iprak\Desktop\grayscale_converted_compressed.jpg')
-
-#         # Loading Compressed Image
-#         img_example = Image.open(r"C:\Users\iprak\Desktop\grayscale_converted_compressed.jpg")
-
-#         # convert image to numpy array
-#         data_example = np.asarray(img_example)
-#         data_example.shape
-
-#         # Reshaping image as taken by the model
-#         data_reshape_example = data_example.reshape(1,28,28,1)
-
-#         # To see new shape
-#         data_reshape_example.shape
-
-#         # Predicting the number
-#         output = model.predict_classes(data_reshape_example)
-#         print(output)
-
-#         return render_template("canvas.html", prediction_text = "The digit is {}".format(output[0]))
-
-
-
-
-#############################################################################################################
-
-
 
 
 if __name__ == "__main__":
