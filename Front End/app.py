@@ -9,7 +9,6 @@ import pickle
 import pandas as pd
 import base64
 import cv2
-import matplotlib as plt
 
 app = Flask(__name__)
 model = load_model("../CNN_on_MNIST.h5")

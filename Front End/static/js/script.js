@@ -44,6 +44,8 @@ window.addEventListener("load", () => {
   canvas.addEventListener("mousedown", startPos);
   canvas.addEventListener("mouseup", stopPos);
   canvas.addEventListener("mousemove", draw);
+
+  inactivityTime();
 });
 
 function showCoords(event) {
@@ -78,3 +80,26 @@ if (document.getElementById("answer").innerText != "") {
 } else {
   document.getElementById("loader").style.top = "37%";
 }
+
+var inactivityTime = function () {
+  var time;
+
+  document.onload = resetTimer;
+  document.onmousemove = resetTimer;
+  document.onmousedown = resetTimer; // touchscreen presses
+  document.ontouchstart = resetTimer;
+  document.onclick = resetTimer; // touchpad clicks
+  document.onkeypress = resetTimer;
+  document.addEventListener("scroll", resetTimer, true); // improved; see comments
+
+  function btn_blink() {
+    document.getElementById("submit_link").style.animation = "glowing 1300ms infinite";
+    //location.href = 'logout.html'
+  }
+
+  function resetTimer() {
+    clearTimeout(time);
+    time = setTimeout(btn_blink, 6000);
+    // 1000 milliseconds = 1 second
+  }
+};

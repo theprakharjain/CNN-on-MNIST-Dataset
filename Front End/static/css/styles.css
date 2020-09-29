@@ -562,14 +562,29 @@ body {
   box-shadow: 10px 10px 5px #232729;
 }
 
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 20px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+}
+/* #submit_link {
+  animation: glowing 1300ms infinite;
+} */
+
 /* 404d53 #################################################################################################*/
 
 .wrapper {
-  /* height: 100vh;
-  width: 100vw; */
   background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
   color: #fff;
-  /* text-align: center; */
   -webkit-backface-visibility: hidden;
 }
 
