@@ -9,6 +9,7 @@ import pickle
 import pandas as pd
 import base64
 import cv2
+import os
 
 app = Flask(__name__)
 model = load_model("../CNN_on_MNIST.h5")
@@ -80,6 +81,9 @@ def image_view():
         # Rendering the prediction on to the webpage
         return render_template("canvas.html", prediction_text = "The digit is {}".format(output[0]))
 
+
+run_cmd_file = r"cd\Software Development\Projects\Number Recognition (CNN on MNIST)\Front End\python app.py"
+os.system(run_cmd_file)
 
 if __name__ == "__main__":
     app.run(debug=True)
