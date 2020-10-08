@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
     var y = event.clientY;
 
     // Setting the attributes of the canvas in respect to "line"
-    ctx.lineWidth = 89;
+    ctx.lineWidth = 60; //89 was the previous value
     ctx.lineCap = "round";
     ctx.strokeStyle = "white";
 

@@ -6,7 +6,8 @@
 
 body {
   background-image: url(noise.png);
-  color: white;
+  /* background-color: #e2dcd3; */
+  color:white;
 }
 
 #navbar {
@@ -29,8 +30,8 @@ body {
 #canvas {
   border: 5px solid #000000;
   background-color: #000000;
-  margin-left: 15px;
-  margin-top: 15px;
+  margin-left: 25px;
+  margin-top: 25px;
   box-shadow: 10px 10px 5px #32e0c4;
 }
 
@@ -65,7 +66,7 @@ body {
   to {
     /* top: 300px; */
     font-size: 75px;
-    color: yellow;
+    color: #ffbf00;
   }
 }
 
@@ -522,7 +523,7 @@ body {
 }
 
 #downloadbtn {
-  margin-left: 10px;
+  margin-left: 20px;
   margin-right: 10px;
   background-color: black;
   color: white;
@@ -544,7 +545,7 @@ body {
 }
 
 #submit_link {
-  margin-left: 40px;
+  margin-left: 50px;
   margin-right: 10px;
   background-color: black;
   color: white;
